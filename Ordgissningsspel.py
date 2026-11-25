@@ -1,5 +1,6 @@
 import random as rand
-words = ["vederkvickelse", "oförvitlig", "obskyr", "förnumstig", "vederstygglig",
+ord_ = ["yxa", "kameleont", "jazzmusik", "yoghurt", "lyx", "fotboll"
+    "vederkvickelse", "oförvitlig", "obskyr", "förnumstig", "vederstygglig",
     "kontradiktion", "ambivalent", "prokrastinera", "perplex", "prekär",
     "excentrisk", "obsolet", "retorik", "förbehållsam", "lakonisk",
     "förklenande", "idiosynkratisk", "kontemplera", "subtil", "perifer",
@@ -20,5 +21,15 @@ words = ["vederkvickelse", "oförvitlig", "obskyr", "förnumstig", "vederstyggli
     "beskaffenhet", "tillmötesgående", "förutsättningslös", "motsägelsefull", "omvälvande",
     "ofrånkomlig", "förkovra", "eftertanke", "svårbegriplig"]
 
-rand.choice(words)
-print(words)
+hemligt_ord = rand.choice(ord_)
+dolt_ord = ["*"] * len(hemligt_ord)
+forsok = 7
+fel_gissningar = []
+print(len(hemligt_ord))
+
+while forsok > 0 and "*" in dolt_ord:
+    print("".join(dolt_ord))
+    print(f"Försök kvar: {forsok}")
+    print(f"Felgissningar: {fel_gissningar}")
+   
+    gissning = input("Gissa en bokstav: ").lower()
