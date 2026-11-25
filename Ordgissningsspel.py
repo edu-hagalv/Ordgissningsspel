@@ -21,18 +21,38 @@ ord_ = ["yxa", "kameleont", "jazzmusik", "yoghurt", "lyx", "fotboll"
     "beskaffenhet", "tillmötesgående", "förutsättningslös", "motsägelsefull", "omvälvande",
     "ofrånkomlig", "förkovra", "eftertanke", "svårbegriplig"]
 
-hemligt_ord = rand.choice(ord_)
-antal_bokstäver = len(hemligt_ord)
-dolt_ord = ["*"] * antal_bokstäver
-försök = 7
-fel_gissningar = []
+spela_igen = "ja"
+alfabet = "abcdefghijklmnopqrstuvwxyzåäö"
 
-print(f"Du ska gissa ett ord bokstav för bokstav på {antal_bokstäver} täcken\nAnge din Gissning")
-print(len(hemligt_ord))
+while spela_igen == "ja":
+    hemligt_ord = rand.choice(ord_)
+    dolt_ord = ["*"] * len(hemligt_ord)
+    forsok = 7
+    fel_gissningar = []
+    print(len(hemligt_ord))
 
-while försök > 0 and "*" in dolt_ord:
-    print("".join(dolt_ord))
-    print(f"Försök kvar: {försök}")
-    print(f"Felgissningar: {fel_gissningar}")
-   
-    gissning = input("Gissa en bokstav: ").lower()
+    while forsok > 0 and "*" in dolt_ord:
+        print("".join(dolt_ord))
+        print(f"Försök kvar: {forsok}")
+        print(f"Felgissningar: {fel_gissningar}")
+       
+        gissning = input("Gissa en bokstav: ").lower()
+       
+        if len(gissning) != 1 or gissning not in alfabet:
+            print("Felmeddelande! Försök vänligen igen: ")
+        elif gissning in fel_gissningar or gissning in dolt_ord:
+            print("Du har redan gissat på den bokstaven!")
+        elif gissning in hemligt_ord:
+            for i in range(len(hemligt_ord)):
+                if hemligt_ord[i] == gissning:
+                    dolt_ord[i] = gissning
+        else:
+            fel_gissningar.append(gissning)
+            forsok = forsok - 1
+
+    if "*" not in dolt_ord:
+        print(f"Grattis, du vann! Ordet var: {hemligt_ord}")
+    else:
+        print(f"Du förlorade! Ordet var: {hemligt_ord}")
+
+    spela_igen = input("Vill du spela igen? (ja/nej): ").lower()
