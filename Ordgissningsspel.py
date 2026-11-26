@@ -53,6 +53,6 @@ while spela_igen == "ja":
     if "*" not in dolt_ord:
         print(f"Grattis, du vann! Ordet var: {hemligt_ord}")
     else:
-        print(f"Du förlorade! Ordet var: {hemligt_ord}")
+        print(f"Du förlorade! Ordet var: {hemligt_ord}\n")
 
     spela_igen = input("Vill du spela igen? (ja/nej): ").lower()
