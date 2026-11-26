@@ -27,13 +27,13 @@ alfabet = "abcdefghijklmnopqrstuvwxyzåäö"
 while spela_igen == "ja":
     hemligt_ord = rand.choice(ord_)
     dolt_ord = ["*"] * len(hemligt_ord)
-    forsok = 7
+    försök = 7
     fel_gissningar = []
     print(f"Du ska gisse ett ord på {len(hemligt_ord)} bokstäver\n------------------------------------\n")
 
-    while forsok > 0 and "*" in dolt_ord:
+    while försök > 0 and "*" in dolt_ord:
         print("".join(dolt_ord))
-        print(f"Försök kvar: {forsok}")
+        print(f"Försök kvar: {försök}")
         print(f"Felgissningar: {fel_gissningar}")
        
         gissning = input("Gissa en bokstav: ").lower()
