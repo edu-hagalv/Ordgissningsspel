@@ -33,15 +33,16 @@ while spela_igen == "ja":
 
     while försök > 0 and "*" in dolt_ord:
         print("".join(dolt_ord))
-        print(f"Försök kvar: {försök}")
+        print(f"Antal försök: {försök}")
         print(f"Felgissningar: {fel_gissningar}")
        
         gissning = input("Gissa en bokstav: ").lower()
+        print("--------------------\n")
        
         if len(gissning) != 1 or gissning not in alfabet:
             print("Felmeddelande! Försök vänligen igen: ")
         elif gissning in fel_gissningar or gissning in dolt_ord:
-            print("Du har redan gissat på den bokstaven!")
+            print("Du har redan gissat på den bokstaven!\n")
         elif gissning in hemligt_ord:
             for i in range(len(hemligt_ord)):
                 if hemligt_ord[i] == gissning:
@@ -51,7 +52,7 @@ while spela_igen == "ja":
             försök = försök - 1
 
     if "*" not in dolt_ord:
-        print(f"Grattis, du vann! Ordet var: {hemligt_ord}")
+        print(f"Grattis, du vann! Ordet var: {hemligt_ord}\n")
     else:
         print(f"Du förlorade! Ordet var: {hemligt_ord}\n")
 
