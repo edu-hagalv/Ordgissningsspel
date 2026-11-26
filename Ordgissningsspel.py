@@ -29,7 +29,7 @@ while spela_igen == "ja":
     dolt_ord = ["*"] * len(hemligt_ord)
     forsok = 7
     fel_gissningar = []
-    print(len(hemligt_ord))
+    print(f"Du ska gisse ett ord på {len(hemligt_ord)} bokstäver\n------------------------------------\n")
 
     while forsok > 0 and "*" in dolt_ord:
         print("".join(dolt_ord))
