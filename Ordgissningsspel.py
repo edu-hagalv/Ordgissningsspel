@@ -18,17 +18,17 @@ ord_ = ["yxa", "kameleont", "jazzmusik", "yoghurt", "lyx", "fotboll"
     "förförståelse", "eftertänksam", "självbespegling", "omdömesgill", "förhastad",
     "vidskeplig", "obarmhärtig", "förbehållslös", "oförtruten", "oupphörlig",
     "tillförlitlighet", "genmäle", "förvillelse", "illavarslande", "anspråkslös",
-    "beskaffenhet", "tillmötesgående", "förutsättningslös", "motsägelsefull", "omvälvande",
-    "ofrånkomlig", "förkovra", "eftertanke", "svårbegriplig"]
+    "beskaffenhet", "tillmötesgående", "förutsättningslös", "motsägelsefull",
+    "omvälvande", "ofrånkomlig", "förkovra", "eftertanke", "svårbegriplig"]   #alla ord som kan dyka upp i en lista
 
-spela_igen = "ja"
-alfabet = "abcdefghijklmnopqrstuvwxyzåäö"
+spela_igen = "ja"      #variabel för att spela igen
+alfabet = "abcdefghijklmnopqrstuvwxyzåäö"     # alla bokstäver som kan användas
 
-while spela_igen == "ja":
-    hemligt_ord = rand.choice(ord_)
-    dolt_ord = ["*"] * len(hemligt_ord)
-    försök = 7
-    fel_gissningar = []
+while spela_igen == "ja":   # skapar en loop där man kan spela igen så länge variabeln spela_igen är True.
+    hemligt_ord = rand.choice(ord_)    # Väljer ut ett slumpmäsigt ord från listan ovanför.
+    dolt_ord = ["*"] * len(hemligt_ord)  # visar det dolda ordet som stjärnan.
+    försök = 7               #antal bokstäver man kan gissa fel innan man förlorat.
+    fel_gissningar = []          #alla bokstäver i en lista som fylls på medans man kör genom .append
     print(f"Du ska gisse ett ord på {len(hemligt_ord)} bokstäver\n------------------------------------\n")
 
     while försök > 0 and "*" in dolt_ord:
