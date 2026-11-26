@@ -48,7 +48,7 @@ while spela_igen == "ja":
                     dolt_ord[i] = gissning
         else:
             fel_gissningar.append(gissning)
-            forsok = forsok - 1
+            försök = försök - 1
 
     if "*" not in dolt_ord:
         print(f"Grattis, du vann! Ordet var: {hemligt_ord}")
